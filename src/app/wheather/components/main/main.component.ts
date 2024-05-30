@@ -6,15 +6,6 @@ import { WheatherService } from '../../wheather.service';
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent implements OnInit {
-  private _wheatherService:WheatherService;
+export class MainComponent {
 
-  constructor(wheatherService:WheatherService){
-    this._wheatherService = wheatherService;
-  }
-
-  ngOnInit(): void {
-    
-  }
-  
 }

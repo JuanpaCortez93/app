@@ -1,1 +1,8 @@
-<p>search works!</p>
+<h1 class="mb-3">Let's find a new location</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="mb-5">
+    <label class="form-label fw-bold">Please, enter the city below</label>
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    <button type="submit" class="btn btn-secondary" style="width: 100%;">Find this city</button>
+</form>
+
+<app-card [wheatherFavs]="wheatherFavsData" [action]="2"></app-card>

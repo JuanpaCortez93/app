@@ -1,3 +1,6 @@
+/**
+ * IFavCitiesApp represents the structure data which its get in api.openweathermap.org API
+ */
 export interface IOpenWeatherApiResponse {
     coord:      Coord;
     weather:    Weather[];

@@ -1,66 +1,79 @@
-<div class="row d-flex justify-content-around">
+<div>
     
-    <div class="col-sm-12 col-md-4 mb-3" *ngFor="let item of wheatherFavs">
-        <div class="card">
-            <div class="card-body text-center">
-                <img [src]="item.icon" class="bd-placeholder-img rounded-circle" width="70" alt="Weather's condition icon">
-                <h5 class="card-title"><b>{{item.city.toUpperCase()}}</b>, {{item.country}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted fw-bolder">Today: {{item.temp}}°C</h6>
-                <h6 class="card-subtitle mb-4 text-muted">{{item.weatherCondition}}</h6>
-    
-                <div class="row d-flex justify-content-around mb-4">
-                    <div class="col">
-                        <div class="row">
-                            <p class="card-text fw-bold text-muted display-6"><i class="bi bi-thermometer-low"></i></p>
+    <div *ngIf="wheatherFavs.length > 0" class="row d-flex justify-content-around">
+        <div class="col-sm-12 col-md-4 mb-3" *ngFor="let item of wheatherFavs">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img [src]="item.icon" class="bd-placeholder-img rounded-circle" width="70" alt="Weather's condition icon">
+                    <h5 class="card-title"><b>{{item.city.toUpperCase()}}</b>, {{item.country}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted fw-bolder">Today: {{item.temp}}°C</h6>
+                    <h6 class="card-subtitle mb-4 text-muted">{{item.weatherCondition}}</h6>
+        
+                    <div class="row d-flex justify-content-around mb-4">
+                        <div class="col">
+                            <div class="row">
+                                <p class="card-text fw-bold text-muted display-6"><i class="bi bi-thermometer-low"></i></p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text fw-bold">Min</p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text text-muted">{{item.minTemp}}°C</p>
+                            </div>
                         </div>
-                        <div class="row">
-                            <p class="card-text fw-bold">Min</p>
+                        <div class="col">
+                            <div class="row">
+                                <p class="card-text fw-bold text-muted display-6"><i class="bi bi-thermometer-high"></i></p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text fw-bold">Max</p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text text-muted">{{item.maxTemp}}°C</p>
+                            </div>
                         </div>
-                        <div class="row">
-                            <p class="card-text text-muted">{{item.minTemp}}°C</p>
+        
+                        <div class="col">
+                            <div class="row">
+                                <p class="card-text fw-bold text-muted display-6"><i class="bi bi-moisture"></i></p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text fw-bold">Humidity</p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text text-muted">{{item.humidity}}%</p>
+                            </div>
+                        </div>
+        
+                        <div class="col">
+                            <div class="row">
+                                <p class="card-text fw-bold text-muted display-6"><i class="bi bi-wind"></i></p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text fw-bold">Wind</p>
+                            </div>
+                            <div class="row">
+                                <p class="card-text text-muted">{{item.windSpeed}}km/s</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row">
-                            <p class="card-text fw-bold text-muted display-6"><i class="bi bi-thermometer-high"></i></p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text fw-bold">Max</p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text text-muted">{{item.maxTemp}}°C</p>
-                        </div>
+        
+                    <div *ngIf="action === 1">
+                        <a class="btn btn-danger d-block" (click)="DeleteFav(item.id)" ><i class="bi bi-x-circle"></i> Remove this location from my list</a>
                     </div>
-    
-                    <div class="col">
-                        <div class="row">
-                            <p class="card-text fw-bold text-muted display-6"><i class="bi bi-moisture"></i></p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text fw-bold">Humidity</p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text text-muted">{{item.humidity}}%</p>
-                        </div>
+                    <div *ngIf="action === 2">
+                        <a class="btn btn-danger d-block mb-2" (click)="DeleteSuggest(item.id)" ><i class="bi bi-x-circle"></i> Remove this location</a>
+                        <a class="btn btn-success d-block" (click)="AddFav(item.city)" ><i class="bi bi-heart"></i> Add this location</a>
                     </div>
-    
-                    <div class="col">
-                        <div class="row">
-                            <p class="card-text fw-bold text-muted display-6"><i class="bi bi-wind"></i></p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text fw-bold">Wind</p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text text-muted">{{item.windSpeed}}km/s</p>
-                        </div>
-                    </div>
+        
                 </div>
-    
-                <a class="btn btn-danger d-block" (click)="DeleteFav(item.id)" ><i class="bi bi-trash"></i> Remove this city from my list</a>
-    
             </div>
         </div>
     </div>
+
+    <div *ngIf="wheatherFavs.length === 0">
+        <p class="text-center my-5 fw-bold display-6">Ups...looks like something is empty here 😫</p>
+    </div>
+
 
 </div>

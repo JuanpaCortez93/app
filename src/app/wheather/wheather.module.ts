@@ -7,8 +7,9 @@ import { SearchComponent } from './components/search/search.component';
 import { CardComponent } from './components/card/card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { WheatherRoutingModule } from './wheather-routing.module';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,13 @@ import { WheatherRoutingModule } from './wheather-routing.module';
   ],
   imports: [
     CommonModule,
-    WheatherRoutingModule
+    WheatherRoutingModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule
   ],
   exports: [
-    MainComponent
+    MainComponent 
   ],
   providers: [
     WheatherService
