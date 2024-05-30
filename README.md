@@ -7,12 +7,12 @@ A company needs know the city weather conditions for their clients/users. The lo
 <img src="foto3.png" alt="workflow" />
 
 The modules are the following:
-![Mi imagen](foto2.png)
+![Mi imagen 2](foto2.png)
 <img src="foto2.png" alt="modules" />
 
 The arquitecture selected is Client-Server to keep things super simple and it is the following:
-![Mi imagen](foto1.png)
-<img src="foto1.png" alt="modules" />
+![Mi imagen 3](foto1.png)
+<img src="foto1.png" alt="arquitecture" />
 
 ## Development server
 
