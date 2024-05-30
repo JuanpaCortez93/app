@@ -1,6 +1,15 @@
 # App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2. and it is part of a test created by MushroomSoft (Frontend).
+A company needs know the city weather conditions for their clients/users. The logic workflow is presented in the following image:
+
+<img src="foto3.png" alt="workflow" />
+
+The modules are the following:
+<img src="foto2.png" alt="modules" />
+
+The arquitecture selected is Client-Server to keep things super simple and it is the following:
+<img src="foto1.png" alt="arquitecture" />
 
 ## Development server
 
