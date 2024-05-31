@@ -1,6 +1,6 @@
 # App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2. and it is part of a test created by MushroomSoft (Frontend).
+This project was generated with Angular version 17.2.2. and it is part of a test created by MushroomSoft (Frontend). The backend part is in this repository and it is called server.
 A company needs know the city weather conditions for their clients/users. The logic workflow is presented in the following image:
 
 <img src="foto3.png" alt="workflow" />
@@ -16,7 +16,9 @@ The arquitecture selected is Client-Server to keep things super simple and it is
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `mongod` for activating the Mongo DB in your localhost. 
+Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run start:dev` for running the server, which is allocated in this repository and it is called "server".
 
 ## Code scaffolding
 
