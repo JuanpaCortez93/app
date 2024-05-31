@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WheatherService } from '../../wheather.service';
 import { IFavCitiesApp } from '../../interfaces/IFavCitiesApp.interface';
+import { IWeatherFavs } from '../../interfaces/IWeatherFavs.interface';
+import { IFavCitiesForecast } from '../../interfaces/IFavCitiesForecast.interface';
 
 /**
   * Component for displaying favorite cities and their weather information.
@@ -30,6 +32,7 @@ export class FavoritesComponent implements OnInit{
     */
     ngOnInit(): void {
       this._weatherService.GetFavoritesCitiesFromApi();
+      console.log(this.wheatherFavsData);
     }
 
     /**
@@ -39,5 +42,7 @@ export class FavoritesComponent implements OnInit{
     get wheatherFavsData(){
       return this._weatherService.wheatherFavsData;
     }
+
+
 
   }

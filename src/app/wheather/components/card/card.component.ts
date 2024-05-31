@@ -19,8 +19,15 @@ export class CardComponent {
 
   @Input() action : number;
 
-  //Dependency injection variables
+  // Dependency injection variables
   private readonly _wheatherService : WheatherService;
+
+  // Variables
+  // Show Week weather forecast
+  showForecast : { [key: string]: boolean } = {};
+  forecastIcon : string = "bi bi-calendar4-week";
+  closeForecastIcon : string = "bi bi-x-circle-fill";
+
 
   /**
    * Constructs a new instance of CardComponent.
@@ -30,12 +37,18 @@ export class CardComponent {
     this._wheatherService = wheatherService;
   }
 
+  // Variables
+  // Show Week weather forecast
+  toggleshowForecast(id: string) {
+    this.showForecast[id] = !this.showForecast[id];
+  }
+
   /**
    * Deletes a favorite city.
    * @param id - Id of the city to delete.
   */
   public DeleteFav(id:string) {
-    return this._wheatherService.DeleteFavoriteCityFromApi(id);
+    return this._wheatherService.DeleteFavoriteCityFromDatabase(id);
   }
 
   /**
@@ -51,6 +64,6 @@ export class CardComponent {
    * @param name - Name of the city to add.
   */
   public AddFav(name:string){
-    this._wheatherService.AddSuggest(name);
+    this._wheatherService.AddFavoriteToDatabase(name);
   }
 } 

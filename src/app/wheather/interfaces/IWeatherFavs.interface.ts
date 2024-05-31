@@ -1,3 +1,6 @@
+import { IFavCitiesForecast } from "./IFavCitiesForecast.interface";
+import { IOpenWeatherApiResponseForecast } from "./IOpenWeatherApiResponseForecast,interface";
+
 /**
  * IFavCitiesApp represents the structure data which its used for the weather cards in the frontend
  */
@@ -11,5 +14,6 @@ export interface IWeatherFavs {
     minTemp : number,
     maxTemp : number,
     windSpeed : number,
-    icon:string
+    icon:string,
+    forecast: IFavCitiesForecast[]
 }

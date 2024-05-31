@@ -57,6 +57,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Botón para alternar la visibilidad del campo extra -->
+                    <div class="">
+                        <a class="btn btn-primary mb-3 d-block" (click)="toggleshowForecast(item.id)">
+                            <i [ngClass]="showForecast[item.id] ? closeForecastIcon : forecastIcon"></i>
+                            {{ showForecast[item.id] ? 'Hide This Tab' : "Show me the forecast" }}
+                        </a>
+                    </div>
+
+                    <!-- Campo extra que se puede abrir y cerrar -->
+
+                    <!-- Campo extra que se puede abrir y cerrar con transición -->
+                    <div [ngClass]="{'collapse show': showForecast[item.id], 'collapse': !showForecast[item.id]}" *ngIf="showForecast[item.id]" class="mb-3">
+                        <div class="row d-flex justify-content-around mb-3">
+                            <div class="col mb-4" *ngFor="let forecast of item.forecast">
+                                <div class="row justify-content-center">
+                                    <img [src]="forecast.info.icon" class="bd-placeholder-img rounded-circle" style="max-width: 70px; max-height: 70px;" width="70" alt="Weather's condition icon">
+                                </div>
+                                <div class="row">
+                                    <p class="card-text fw-bold">{{forecast.info.date}}</p>
+                                </div>
+                                <div class="row">
+                                    <p class="card-text fw-bold text-muted">{{forecast.info.weatherCondition}}</p>
+                                </div>
+                                <div class="row">
+                                    <p class="card-text text-muted">{{forecast.info.temp}}°C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         
                     <div *ngIf="action === 1">
                         <a class="btn btn-danger d-block" (click)="DeleteFav(item.id)" ><i class="bi bi-x-circle"></i> Remove this location from my list</a>

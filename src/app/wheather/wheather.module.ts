@@ -10,6 +10,7 @@ import { WheatherRoutingModule } from './wheather-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     MainComponent 
   ],
   providers: [
-    WheatherService
+    WheatherService,
+    DataService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA 
