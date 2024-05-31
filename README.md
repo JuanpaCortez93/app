@@ -8,6 +8,9 @@ A company needs know the city weather conditions for their clients/users. The lo
 The modules are the following:
 <img src="foto2.png" alt="modules" />
 
+The tree map is the following:
+<img src="foto4.png" alt="tree_map" />
+
 The arquitecture selected is Client-Server to keep things super simple and it is the following:
 <img src="foto1.png" alt="arquitecture" />
 
