@@ -4,15 +4,16 @@ import { IFavCitiesApp } from './interfaces/IFavCitiesApp.interface';
 import { ToastrService } from 'ngx-toastr';
 import { IOpenWeatherApiResponseForecast } from './interfaces/IOpenWeatherApiResponseForecast,interface';
 import { IFavCitiesForecast } from './interfaces/IFavCitiesForecast.interface';
-import { WeatherFavCities } from './models/wheaterFavCities.model';
-import { WeatherForecast } from './models/weatherForecast.model';
-import { WeatherForecastInfoList } from './models/weatherForecastInfoList.model';
+import { WeatherFavCities } from '../models/wheaterFavCities.model';
+import { WeatherForecast } from '../models/weatherForecast.model';
+import { WeatherForecastInfoList } from '../models/weatherForecastInfoList.model';
 import { DataService } from './data.service';
+import { IWeatherService } from './interfaces/IWeatherService.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WheatherService {
+export class WheatherService implements IWeatherService {
 
   // Define dependency injection variables
   private readonly _toastr: ToastrService; 
@@ -48,6 +49,7 @@ export class WheatherService {
       const temp : number = res.main.temp;
       const minTemp : number = res.main.temp_min;
       const maxTemp : number = res.main.temp_max;
+      const feelsLikeTemp : number = res.main.feels_like;
       const humidity : number = res.main.humidity;
       const weatherCondition : string = res.weather['0'].main;
       const icon : string = res.weather['0'].icon;
@@ -64,7 +66,7 @@ export class WheatherService {
               const forecastApi = this._dataService.GetForecastFromApi(favCities.cityName);
               forecastApi.subscribe(res => {  
                 const weatherForecastData = this.CreateForecastApi(res);
-                const weatherFavsObj : WeatherFavCities = new WeatherFavCities(favCities.id, country, favCities.cityName, weatherCondition, humidity, temp, minTemp, maxTemp, windSpeed, icon, weatherForecastData) ;
+                const weatherFavsObj : WeatherFavCities = new WeatherFavCities(favCities.id, country, favCities.cityName, weatherCondition, humidity, temp, minTemp, maxTemp, feelsLikeTemp, windSpeed, icon, weatherForecastData) ;
                 this.wheatherFavsData.push(weatherFavsObj);
               });              
             }else this._toastr.warning('This city is in your favorites', 'Not allowed');
@@ -76,7 +78,7 @@ export class WheatherService {
         const forecastApi = this._dataService.GetForecastFromApi(favCities.cityName);
         forecastApi.subscribe(res => {  
           const weatherForecastData = this.CreateForecastApi(res);
-          const weatherFavsObj : WeatherFavCities = new WeatherFavCities(favCities.id, country, favCities.cityName, weatherCondition, humidity, temp, minTemp, maxTemp, windSpeed, icon, weatherForecastData) ;
+          const weatherFavsObj : WeatherFavCities = new WeatherFavCities(favCities.id, country, favCities.cityName, weatherCondition, humidity, temp, minTemp, maxTemp, feelsLikeTemp, windSpeed, icon, weatherForecastData) ;
           this.wheatherFavsData.push(weatherFavsObj);
         });
       }
@@ -128,7 +130,6 @@ export class WheatherService {
       weatherForecastData.push(weatherForecastObj);
     });
 
-    weatherForecastData.shift();
 
     return weatherForecastData;
   }

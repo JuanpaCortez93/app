@@ -13,6 +13,7 @@ export interface IWeatherFavs {
     temp:number,
     minTemp : number,
     maxTemp : number,
+    feelsLikeTemp: number,
     windSpeed : number,
     icon:string,
     forecast: IFavCitiesForecast[]

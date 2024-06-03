@@ -1,5 +1,5 @@
 import { environment } from "../../../environments/environment.development";
-import { IList } from "../interfaces/IFavCitiesForecast.interface";
+import { IList } from "../services/interfaces/IFavCitiesForecast.interface";
 
 
 export class WeatherForecastInfoList implements IList {

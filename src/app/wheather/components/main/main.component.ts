@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WheatherService } from '../../wheather.service';
+import { WheatherService } from '../../services/wheather.service';
 
 @Component({
   selector: 'app-main',

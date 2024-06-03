@@ -1,4 +1,4 @@
-import { IFavCitiesForecast, IList } from "../interfaces/IFavCitiesForecast.interface";
+import { IFavCitiesForecast, IList } from "../services/interfaces/IFavCitiesForecast.interface";
 import { WeatherForecastInfoList } from "./weatherForecastInfoList.model";
 
 export class WeatherForecast implements IFavCitiesForecast {

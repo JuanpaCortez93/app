@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IWeatherFavs } from '../../interfaces/IWeatherFavs.interface';
-import { WheatherService } from '../../wheather.service';
+import { IWeatherFavs } from '../../services/interfaces/IWeatherFavs.interface';
+import { WheatherService } from '../../services/wheather.service';
 
 @Component({
   selector: 'app-card',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { WheatherService } from '../../wheather.service';
-import { IFavCitiesApp } from '../../interfaces/IFavCitiesApp.interface';
-import { IWeatherFavs } from '../../interfaces/IWeatherFavs.interface';
-import { IFavCitiesForecast } from '../../interfaces/IFavCitiesForecast.interface';
+import { WheatherService } from '../../services/wheather.service';
+import { IFavCitiesApp } from '../../services/interfaces/IFavCitiesApp.interface';
+import { IWeatherFavs } from '../../services/interfaces/IWeatherFavs.interface';
+import { IFavCitiesForecast } from '../../services/interfaces/IFavCitiesForecast.interface';
 
 /**
   * Component for displaying favorite cities and their weather information.

@@ -1,4 +1,10 @@
-<h1>Hello, Juan Pablo</h1>
-<p>These are the weather conditions of your cities today</p>
+<div *ngIf="wheatherFavsData.length > 0">
+    <h1>Hello, Juan Pablo</h1>
+    <p>These are the weather conditions of your cities today</p>
+</div>
 <app-card [wheatherFavs]="wheatherFavsData" [action]="1"></app-card>
-<app-button></app-button>
+
+<div *ngIf="wheatherFavsData.length === 0">
+    <app-button></app-button>
+</div>
+

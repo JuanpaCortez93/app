@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WheatherService } from './wheather.service';
+import { WheatherService } from './services/wheather.service';
 import { MainComponent } from './components/main/main.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { SearchComponent } from './components/search/search.component';
@@ -10,7 +10,7 @@ import { WheatherRoutingModule } from './wheather-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [

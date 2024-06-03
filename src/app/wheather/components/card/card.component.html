@@ -7,6 +7,7 @@
                     <img [src]="item.icon" class="bd-placeholder-img rounded-circle" width="70" alt="Weather's condition icon">
                     <h5 class="card-title"><b>{{item.city.toUpperCase()}}</b>, {{item.country}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted fw-bolder">Today: {{item.temp}}°C</h6>
+                    <h6 class="card-subtitle mb-2 text-muted fw-bolder">Feels like {{item.feelsLikeTemp}}°C</h6>
                     <h6 class="card-subtitle mb-4 text-muted">{{item.weatherCondition}}</h6>
         
                     <div class="row d-flex justify-content-around mb-4">
@@ -102,7 +103,8 @@
     </div>
 
     <div *ngIf="wheatherFavs.length === 0">
-        <p class="text-center my-5 fw-bold display-6">Ups...looks like something is empty here 😫</p>
+        <p class="text-center my-5 fw-bold h2">Ups...looks like something is empty here 😫</p>
+        <p class="text-center my-5 fw-400 h4">Add your favorite cities here as much as you can</p>
     </div>
 
 
